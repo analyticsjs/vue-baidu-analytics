@@ -17,6 +17,10 @@ vue-baidu-analytics 使用说明
 
 * 支持手动提交事件分析上报
 
+## 预览
+
+[vue-baidu-analytics demo](https://chengpeiquan.github.io/vue-baidu-analytics/demo/ "vue-baidu-analytics demo")
+
 ## 参数
 
 参数|是否必填|参数类型|参数说明
