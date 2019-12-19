@@ -20,7 +20,7 @@ vue-baidu-analytics 使用说明
 ## 参数
 
 参数|是否必填|参数类型|参数说明
-:-:|:-:|::-
+:-:|:-:|:-:|::-
 router|是|JSON Object|Vue Router，本插件基于路由使用
 siteIdList|是|Array|百度统计的站点id列表，item为站点id<br>只有一个站点需要上报就保留一个item即可
 debug|否|Boolean|是否开启debug模式，默认false<br>开启后会在控制台打印上报信息，上线前记得关闭
