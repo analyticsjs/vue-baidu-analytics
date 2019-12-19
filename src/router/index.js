@@ -28,8 +28,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  base: process.env.NODE_ENV === 'production' ? location.pathname.split('/').slice(0, 2).join('/') : '/',
-  mode: 'history',
+  // base: process.env.NODE_ENV === 'production' ? location.pathname.split('/').slice(0, 2).join('/') : '/',
+  // mode: 'history',
   linkActiveClass: 'cur',
   linkExactActiveClass: 'cur',
   routes
