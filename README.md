@@ -19,7 +19,9 @@ vue-baidu-analytics 使用说明
 
 ## 预览
 
-[vue-baidu-analytics demo](https://chengpeiquan.github.io/vue-baidu-analytics/demo/ "vue-baidu-analytics demo")
+demo已开启debug模式，可开启控制台查看上报情况。
+
+点击预览：[vue-baidu-analytics demo](https://chengpeiquan.github.io/vue-baidu-analytics/demo/ "vue-baidu-analytics demo")
 
 ## 参数
 
