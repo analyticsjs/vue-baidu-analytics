@@ -1,5 +1,5 @@
 const { createRouter, createWebHashHistory } = VueRouter;
-const { createApp } = Vue;
+const { createApp, defineComponent, getCurrentInstance, ref } = Vue;
 
 // 定义路由信息
 const routes = [
@@ -46,6 +46,42 @@ createApp({})
     isDebug: true
   })
   .mount('#app');
+
+const app = defineComponent({
+  setup () {
+    // 数据
+    const pageUrl = ref('');
+    const category = ref('');
+    const action = ref('');
+    const label = ref('');
+    const value = ref('');
+    const { proxy } = getCurrentInstance();
+
+    console.log('setup');
+    console.log(pageUrl);
+
+    const pv = () => {
+      pushBAIDU.pv('/')
+    }
+
+    const pv2 = () => {
+      proxy.$pushBAIDU.pv('/2');
+    }
+
+    return {
+      // 数据
+      pageUrl,
+      category,
+      action,
+      label,
+      value,
+
+      // 方法
+      pv,
+      pv2
+    }
+  }
+})
 
 // // 初始化Vue
 // const app = new Vue({
