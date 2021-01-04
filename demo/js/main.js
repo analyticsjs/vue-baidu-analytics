@@ -42,6 +42,8 @@ Vue.use(baiduAnalytics, {
   isDebug: true
 });
 
+console.log('baiduAnalytics', baiduAnalytics);
+
 // 初始化Vue
 const app = new Vue({
   el: '#app',
@@ -59,7 +61,8 @@ const app = new Vue({
   },
   methods: {
     pv () {
-      this.$pushBAIDU.pv(this.pageUrl);
+      // this.$pushBAIDU.pv(this.pageUrl);
+      console.log(baiduAnalytics.pushBAIDU);
     },
     event () {
       this.$pushBAIDU.event(this.category, this.action, this.label, this.value);

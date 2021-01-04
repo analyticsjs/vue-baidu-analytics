@@ -1,12 +1,12 @@
 /** 
  * name: vue-baidu-analytics
- * version: v1.1.0
+ * version: v2.0.0
  * author: chengpeiquan
  */
  (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.baiduAnalytics = factory());
+  (global = global || self, global.baiduAnalytics = factory());
 }(this, (function () { 'use strict';
 
   var BAIDU = (function () {
@@ -92,6 +92,18 @@
       return PushBAIDU;
   }());
 
+  var getVueVersion = function (Vue) {
+      var version = 2;
+      var VUE_VERSION = String(Vue.version);
+      if (VUE_VERSION.slice(0, 2) === '2.') {
+          version = 2;
+      }
+      if (VUE_VERSION.slice(0, 2) === '3.') {
+          version = 3;
+      }
+      return version;
+  };
+
   function install(Vue, _a) {
       var router = _a.router, siteIdList = _a.siteIdList, _b = _a.isDebug, isDebug = _b === void 0 ? false : _b;
       if (typeof document === 'undefined' || typeof window === 'undefined') {
@@ -104,7 +116,13 @@
           throw new Error('[vue-baidu-analytics] Missing tracking domain ID, add at least one of baidu analytics.');
       }
       var pushBAIDU = new PushBAIDU(siteIdList, isDebug);
-      Vue.prototype.$pushBAIDU = pushBAIDU;
+      var VUE_VERSION = getVueVersion(Vue) || 0;
+      if (VUE_VERSION === 2) {
+          Vue.prototype.$pushBAIDU = pushBAIDU;
+      }
+      if (VUE_VERSION === 3) {
+          Vue.config.globalProperties.$pushBAIDU = pushBAIDU;
+      }
       if (siteIdList) {
           pushBAIDU.init();
       }
