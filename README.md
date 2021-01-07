@@ -136,10 +136,11 @@ pageUrl|否|String|提交上报的url，必须是以 `/` 开头的相对路径<b
 this.$pushBAIDU.pv(this.pageUrl);
 ```
 
-在 Vue 3.0 里使用（需要遵循Vue3的规范，引入一个Vue自带的代理组件）
+在 Vue 3.0 里使用
+
+（使用3.0的生命周期，需要遵循Vue3的规范，引入一个Vue自带的代理组件，并写在 `setup` 里执行）
 
 ```js
-const { getCurrentInstance } = Vue;
 const { proxy } = getCurrentInstance();
 
 proxy.$pushBAIDU.pv(pageUrl.value);
@@ -173,10 +174,11 @@ this.$pushBAIDU.event(
 );
 ```
 
-在 Vue 3.0 里使用（需要遵循Vue3的规范，引入一个Vue自带的代理组件）
+在 Vue 3.0 里使用
+
+（使用3.0的生命周期，需要遵循Vue3的规范，引入一个Vue自带的代理组件，并写在 `setup` 里执行）
 
 ```js
-const { getCurrentInstance } = Vue;
 const { proxy } = getCurrentInstance();
 
 proxy.$pushBAIDU.event(
