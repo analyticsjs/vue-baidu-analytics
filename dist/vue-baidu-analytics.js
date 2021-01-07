@@ -6,7 +6,7 @@
  (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.baiduAnalytics = factory());
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.baiduAnalytics = factory());
 }(this, (function () { 'use strict';
 
   var BAIDU = (function () {
@@ -116,7 +116,7 @@
           throw new Error('[vue-baidu-analytics] Missing tracking domain ID, add at least one of baidu analytics.');
       }
       var pushBAIDU = new PushBAIDU(siteIdList, isDebug);
-      var VUE_VERSION = getVueVersion(Vue) || 0;
+      var VUE_VERSION = getVueVersion(Vue) || 2;
       if (VUE_VERSION === 2) {
           Vue.prototype.$pushBAIDU = pushBAIDU;
       }

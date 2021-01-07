@@ -2,7 +2,7 @@
  * 导入需要用到的组件
  */
 const { createRouter, createWebHashHistory } = VueRouter;
-const { createApp, defineComponent, getCurrentInstance, ref } = Vue;
+const { createApp, getCurrentInstance, ref } = Vue;
 
 
 /** 
