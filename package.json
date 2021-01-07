@@ -1,8 +1,9 @@
 {
   "name": "vue-baidu-analytics",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A data collection tool that supports reporting of single-page application data built by Vue-cli, based on baidu statistics.",
   "main": "dist/vue-baidu-analytics.min.js",
+  "types": "vue-baidu-analytics.d.ts",
   "scripts": {
     "build": "rollup -c rollup.config.ts"
   },
