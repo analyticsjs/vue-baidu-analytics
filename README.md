@@ -3,11 +3,7 @@ vue-baidu-analytics 使用说明
 
 基于Vue开发的百度统计插件，可以在 `Vue-CLI脚手架项目` 或者 `引入了Vue相关CDN的普通页面` 上使用，使用本插件的项目需要引入 `Vue Router`。
 
-> @v2.0版本更新：
-
-> 最新版支持 Vue 3.x，同时兼容 Vue 2.x 使用，具体使用方法请看下方说明及demo。
-
-> 对Vue 3.0感兴趣，但还在观望的同学，欢迎阅读我踩坑总结的：[Vue 3.0 学习教程](https://vue3.chengpeiquan.com/) （持续更新ing）
+> @v2.0版本更新：<br>最新版支持 Vue 3.x，同时兼容 Vue 2.x 使用，具体使用方法请看下方说明及demo。<br>对Vue 3.0感兴趣，但还在观望的同学，欢迎阅读我踩坑总结的：[Vue 3.0 学习教程](https://vue3.chengpeiquan.com/) （持续更新ing）
 
 ## 功能
 
