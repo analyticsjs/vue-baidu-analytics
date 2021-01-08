@@ -1,6 +1,6 @@
 /** 
  * name: vue-baidu-analytics
- * version: v2.0.0
+ * version: v2.0.1
  * author: chengpeiquan
  */
  (function (global, factory) {
