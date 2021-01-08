@@ -1,7 +1,7 @@
 vue-baidu-analytics 使用说明
 ===
 
-基于Vue开发的百度统计插件，可以在 `Vue-CLI脚手架项目` 或者 `引入了Vue相关CDN的普通页面` 上使用，使用本插件的项目需要引入 `Vue Router`。
+基于Vue开发的百度统计插件，可以在 `Vue-CLI脚手架项目` 或者 `引入了Vue相关CDN的普通页面`，以及 `VuePress` 项目上使用，使用本插件的项目需要引入 `Vue Router`。
 
 > @v2.0版本更新：<br>最新版支持 Vue 3.x，同时兼容 Vue 2.x 使用，具体使用方法请看下方说明及demo。<br>对Vue 3.0感兴趣，但还在观望的同学，欢迎阅读我踩坑总结的：[Vue 3.0 学习教程](https://vue3.chengpeiquan.com/) （持续更新ing）
 
@@ -102,6 +102,30 @@ createApp(app)
   
   // 挂载到节点上
   .mount('#app');
+```
+
+### 在 VuePress 里使用
+
+插件也支持在Vue的静态文档 [VuePress](https://vuepress.vuejs.org/zh/) 项目里使用。
+
+在项目下的 `/docs/.vuepress` 文件夹下，创建一个 `enhanceApp.js`，按照下面的方式引入即可启动数据上报功能。
+
+官方文档传送门：[应用级别的配置 - VuePress](https://vuepress.vuejs.org/zh/guide/basic-config.html#%E5%BA%94%E7%94%A8%E7%BA%A7%E5%88%AB%E7%9A%84%E9%85%8D%E7%BD%AE)
+
+```js
+import baiduAnalytics from 'vue-baidu-analytics'
+
+export default ({ Vue, router }) => {
+  Vue.use(baiduAnalytics, {
+    router: router,
+    siteIdList: [
+      'aaaaaaaaaaaaaaaaaaa',
+      'bbbbbbbbbbbbbbbbbbb',
+      'ccccccccccccccccccc'
+    ],
+    isDebug: false
+  });
+};
 ```
 
 可在开发环境打开debug模式了解相关的上报情况（上线前记得关闭debug）。
