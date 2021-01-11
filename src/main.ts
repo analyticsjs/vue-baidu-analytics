@@ -55,11 +55,11 @@ export default function install (Vue: Vue, { router, siteIdList, isDebug = false
     const ROUTER_MODE: string = getRouterMode(VUE_VERSION, router);
     
     // 获取页面的url信息
-    const PAGE_PATH_DIR_COUNT = window.location.pathname.split('/').length;
-    const PAGE_PATH = window.location.pathname.split('/').slice(0, PAGE_PATH_DIR_COUNT - 1).join('/');
+    const PAGE_PATH_DIR_COUNT: number = window.location.pathname.split('/').length;
+    const PAGE_PATH: string = window.location.pathname.split('/').slice(0, PAGE_PATH_DIR_COUNT - 1).join('/');
 
     // 根据路由模式生成要上报的链接
-    const PAGE_URL = ROUTER_MODE === 'hash' ? `${PAGE_PATH}/#${to.fullPath}` : `${PAGE_PATH}${to.fullPath}`;
+    const PAGE_URL: string = ROUTER_MODE === 'hash' ? `${PAGE_PATH}/#${to.fullPath}` : `${PAGE_PATH}${to.fullPath}`;
     
     // 上报数据
     pushBAIDU.pv(PAGE_URL);
