@@ -46,7 +46,7 @@ npm install vue-baidu-analytics --save-dev
 参数|是否必填|参数类型|参数说明
 :-:|:-:|:-:|-
 router|是|object|Vue Router，本插件基于路由使用
-siteIdList|是|object Array|百度统计的站点id列表，item为站点id<br>只有一个站点需要上报就保留一个item即可
+siteIdList|是|string[]|百度统计的站点id列表，item为站点id<br>只有一个站点需要上报就保留一个item即可
 isDebug|否|boolean|是否开启debug模式，默认 `false`<br>开启后会在控制台打印上报信息，**上线前记得关闭**
 
 ## 使用
@@ -97,7 +97,7 @@ createApp(app)
       'bbbbbbbbbbbbbbbbbbb',
       'ccccccccccccccccccc'
     ],
-    isDebug: true
+    isDebug: false
   })
   
   // 挂载到节点上
