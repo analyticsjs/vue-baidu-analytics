@@ -1,6 +1,6 @@
 /** 
  * name: vue-baidu-analytics
- * version: v2.0.2
+ * version: v2.0.3
  * author: chengpeiquan
  */
  (function (global, factory) {
@@ -104,20 +104,6 @@
       return version;
   };
 
-  var getRouterMode = function (vueVersion, router) {
-      var mode = 'history';
-      if (vueVersion === 2) {
-          mode = router.mode;
-      }
-      if (vueVersion === 3) {
-          var BASE = router.options.history.base || '';
-          if (BASE.includes('#')) {
-              mode = 'hash';
-          }
-      }
-      return mode;
-  };
-
   function install(Vue, _a) {
       var router = _a.router, siteIdList = _a.siteIdList, _b = _a.isDebug, isDebug = _b === void 0 ? false : _b;
       if (typeof document === 'undefined' || typeof window === 'undefined') {
@@ -141,10 +127,7 @@
           pushBAIDU.init();
       }
       router.afterEach(function (to) {
-          var ROUTER_MODE = getRouterMode(VUE_VERSION, router);
-          var PAGE_PATH_DIR_COUNT = window.location.pathname.split('/').length;
-          var PAGE_PATH = window.location.pathname.split('/').slice(0, PAGE_PATH_DIR_COUNT - 1).join('/');
-          var PAGE_URL = ROUTER_MODE === 'hash' ? PAGE_PATH + "/#" + to.fullPath : "" + PAGE_PATH + to.fullPath;
+          var PAGE_URL = window.location.href;
           pushBAIDU.pv(PAGE_URL);
       });
   }
