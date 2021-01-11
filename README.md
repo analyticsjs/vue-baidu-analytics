@@ -97,7 +97,7 @@ createApp(app)
       'bbbbbbbbbbbbbbbbbbb',
       'ccccccccccccccccccc'
     ],
-    isDebug: true
+    isDebug: false
   })
   
   // 挂载到节点上
