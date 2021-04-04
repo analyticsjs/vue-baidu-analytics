@@ -1,5 +1,5 @@
 <p align='center'>
-  <img src="https://cdn.jsdelivr.net/gh/chengpeiquan/assets-storage/img/2021/04/20210404235010.png" alt="vue-baidu-analytics" />
+  <img src="https://cdn.jsdelivr.net/gh/chengpeiquan/assets-storage/img/2021/04/20210404235335.png" alt="vue-baidu-analytics" />
 </p>
 
 <p align='center'>
