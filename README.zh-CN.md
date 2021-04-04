@@ -10,7 +10,7 @@
 <br>
 <br>
 
-[English](https://github.com/analyticsjs/vue-baidu-analytics/blob/main/README.md) | 简体中文
+[English](https://github.com/analyticsjs/vue-baidu-analytics/blob/master/README.md) | 简体中文
 
 一个只有 3 kB 大小的插件，可以帮你轻松解决 SPA 单页面项目浏览数据不准确的问题，基于 Vue 路由访问轨迹自动向百度统计平台上报 PV / 事件数据，使用本插件的项目需要引入 [Vue Router](https://router.vuejs.org/) 。
 
