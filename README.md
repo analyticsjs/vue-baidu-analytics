@@ -10,7 +10,7 @@
 <br>
 <br>
 
-English | [简体中文](https://github.com/analyticsjs/vue-baidu-analytics/blob/main/README.zh-CN.md)
+English | [简体中文](https://github.com/analyticsjs/vue-baidu-analytics/blob/master/README.zh-CN.md)
 
 Only 3 kB, this plugin base on the Baidu analytics, it can help you quickly to collect the page views on your website, including single page web application.
 
