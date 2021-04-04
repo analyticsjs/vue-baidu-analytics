@@ -31,9 +31,11 @@ const app = {
 
     /**
      * 原来的方式
-     * @description 用代理组件去操作，对 TS 项目不够友好
+     * @description 从当前实例里，导入代理组件去操作，对 TS 项目不够友好
      */
-    // const { proxy } = getCurrentInstance();
+    // const instance = getCurrentInstance();
+    // const { proxy } = instance;
+
 
     // 初始化要用到的数据
     const pageUrl = ref('');
@@ -50,7 +52,10 @@ const app = {
       // 通过钩子去操作
       baidu.pv(pageUrl.value);
 
-      // 通过代理组件去操作
+      // 也可以通过全局属性去操作
+      // instance.appContext.config.globalProperties.$pushBAIDU.pv(pageUrl.value);
+
+      // 也可以通过代理组件去操作
       // proxy.$pushBAIDU.pv(pageUrl.value);
     }
 
@@ -67,7 +72,15 @@ const app = {
         value.value
       );
 
-      // 通过代理组件去操作
+      // 也可以通过全局属性去操作
+      // instance.appContext.config.globalProperties.$pushBAIDU.event(
+      //   category.value,
+      //   action.value,
+      //   label.value,
+      //   value.value
+      // );
+
+      // 也可以通过代理组件去操作
       // proxy.$pushBAIDU.event(
       //   category.value,
       //   action.value,
