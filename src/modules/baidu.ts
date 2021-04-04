@@ -1,4 +1,4 @@
-/** 
+/**
  * 定义基础配置
  * 官方文档 https://tongji.baidu.com/open/api/more?p=guide_overview
  */
@@ -11,7 +11,7 @@ class BAIDU {
     this.isDebug = isDebug;
   }
 
-  /** 
+  /**
    * 初始化
    */
   init () {
@@ -19,21 +19,21 @@ class BAIDU {
     const SCRIPT = document.createElement('script');
     SCRIPT['async'] = true;
     SCRIPT['src'] = `https://hm.baidu.com/hm.js?${this.siteId}`;
-    document.querySelector('head').appendChild(SCRIPT);
+    document.querySelector('head')?.appendChild(SCRIPT);
 
     if ( this.isDebug ) {
       console.log(`[vue-baidu-analytics] siteId load done.\nsiteId:    ${this.siteId}`);
     }
   }
 
-  /** 
+  /**
    * 设置要响应的站点
    */
   setAccount () {
     window._hmt.push(['_setAccount', this.siteId]);
   }
 
-  /** 
+  /**
    * 提交PV、UV
    */
   trackPageview (pageUrl: string) {
@@ -49,7 +49,7 @@ class BAIDU {
       pageUrl = pageUrl.replace(HOST_NAME, '');
     }
 
-    // 设置响应id并提交数据
+    // 设置响应 id 并提交数据
     this.setAccount();
     window._hmt.push(['_trackPageview', pageUrl]);
 
@@ -58,14 +58,13 @@ class BAIDU {
     }
   }
 
-  /** 
+  /**
    * 提交点击事件
    */
   trackEvent (category: string, action: string, label: string, value: number) {
     // 前两个是必填项
     if ( typeof category !== 'string' ||  typeof action !== 'string' || !category || !action ) {
       throw new Error('[vue-baidu-analytics] Missing necessary category and operation information, and must be of type string.');
-      return false;
     }
 
     // 重置一些无效的默认值

@@ -2,11 +2,15 @@
   "compilerOptions": {
     "target": "ES5",
     "module": "ES2015",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
     "sourceMap": true,
+    "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
       "@/*": [

@@ -7,14 +7,12 @@ import banner2 from 'rollup-plugin-banner2'
 import typescript from 'rollup-plugin-typescript2'
 import pkg from './package.json'
 
-// 版权信息配置
-const ResolveBanner = () => {
-  return `/** 
- * name: ${pkg.name}
- * version: v${pkg.version}
- * author: ${pkg.author}
- */
- `;
+// 输出选项
+const outputOptions = {
+  format: 'umd',
+  name: 'baiduAnalytics',
+  exports: 'named',
+  sourcemap: true
 }
 
 export default {
@@ -22,32 +20,31 @@ export default {
   output: [
     {
       file: `dist/vue-baidu-analytics.js`,
-      format: 'umd',
-      name: 'baiduAnalytics',
-      sourcemap: true
+      ...outputOptions
     },
     {
       file: `dist/vue-baidu-analytics.min.js`,
-      format: 'umd',
-      name: 'baiduAnalytics',
       plugins: [
         terser()
       ],
-      sourcemap: true
+      ...outputOptions
     }
   ],
   plugins: [
     resolve({
       browser: true
     }),
+
     babel({
       babelHelpers: 'bundled'
     }),
+
     commonjs(),
+
     json(),
+
     typescript(),
-    banner2( ResolveBanner, {
-      sourcemap: true
-    })
+
+    banner2(() => `/*!\n * name: ${pkg.name}\n * version: v${pkg.version}\n * author: ${pkg.author}\n */\n`)
   ]
 };
