@@ -1,9 +1,9 @@
 vue-baidu-analytics 使用说明
 ===
 
-基于Vue开发的百度统计插件，可以在 `Vue-CLI脚手架项目` 或者 `引入了Vue相关CDN的普通页面`，以及 `VuePress` 项目上使用，使用本插件的项目需要引入 `Vue Router`。
+基于 Vue 开发的百度统计插件，可以在 `Vue-CLI 脚手架项目` 或者 `引入了 Vue 相关 CDN 的普通页面`，以及 `VuePress` 项目上使用，使用本插件的项目需要引入 `Vue Router`。
 
-> @v2.0版本更新：<br>最新版支持 Vue 3.x，同时兼容 Vue 2.x 使用，具体使用方法请看下方说明及demo。<br>对Vue 3.0感兴趣，但还在观望的同学，欢迎阅读我踩坑总结的：[Vue 3.0 学习教程](https://vue3.chengpeiquan.com/) （持续更新ing）
+> v2.0 版本更新：<br>最新版支持 Vue 3.x，同时兼容 Vue 2.x 使用，具体使用方法请看下方说明及demo。<br>对 Vue 3.0 感兴趣，但还在观望的同学，欢迎阅读我踩坑总结的：[Vue 3.0 学习教程](https://vue3.chengpeiquan.com/) （持续更新ing）
 
 ## 功能
 
@@ -29,13 +29,13 @@ Vue 3.0 版本：[vue-baidu-analytics demo for Vue 3.x](https://chengpeiquan.git
 
 ## 安装
 
-方式一：通过npm安装
+方式一：通过 NPM 安装
 
 ```
 npm install vue-baidu-analytics --save-dev
 ```
 
-方式二：通过cdn安装
+方式二：通过 CDN 安装
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue-baidu-analytics/dist/vue-baidu-analytics.min.js"></script>
@@ -46,20 +46,20 @@ npm install vue-baidu-analytics --save-dev
 参数|是否必填|参数类型|参数说明
 :-:|:-:|:-:|-
 router|是|object|Vue Router，本插件基于路由使用
-siteIdList|是|string[]|百度统计的站点id列表，item为站点id<br>只有一个站点需要上报就保留一个item即可
-isDebug|否|boolean|是否开启debug模式，默认 `false`<br>开启后会在控制台打印上报信息，**上线前记得关闭**
+siteIdList|是|string[]|百度统计的站点 id 列表，item 为站点 id <br>只有一个站点需要上报就保留一个 item 即可
+isDebug|否|boolean|是否开启 debug 模式，默认 `false`<br>开启后会在控制台打印上报信息，**上线前记得关闭**
 
 ## 使用
 
-通过npm安装的项目，需要先在 `main.js` 里引入插件（通过cdn则无需该步骤）。
+通过 NPM 安装的项目，需要先在 `main.js` 里引入插件（通过 CDN 则无需该步骤）。
 
 ```js
 import baiduAnalytics from 'vue-baidu-analytics'
 ```
 
-安装插件后，在 `main.js` 引入以下代码（注意区分Vue2.0和Vue3.0的用法区别），即可开启自动上报功能，首次访问页面会部署统计代码并提交第一次访问数据上报。
+安装插件后，在 `main.js` 引入以下代码（注意区分 Vue 2.0 和 Vue 3.0 的用法区别），即可开启自动上报功能，首次访问页面会部署统计代码并提交第一次访问数据上报。
 
-后续在路由切换过程中，也会根据路由的切换提交相应的url信息到友盟统计。
+后续在路由切换过程中，也会根据路由的切换提交相应的url信息到百度统计。
 
 ### 在 Vue 2.0 里使用
 
@@ -128,21 +128,21 @@ export default ({ Vue, router }) => {
 };
 ```
 
-可在开发环境打开debug模式了解相关的上报情况（上线前记得关闭debug）。
+可在开发环境打开 debug 模式了解相关的上报情况（上线前记得关闭 debug ）。
 
 ## 方法
 
-插件目前封装了两个常用的api，统一挂载到Vue实例上的 `$pushBAIDU` 去调用。
+插件目前封装了两个常用的 API ，统一挂载到 Vue 实例上的 `$pushBAIDU` 去调用。
 
-注：如果配置了多个站点id，会同时上报给所有站点。
+注：如果配置了多个站点 id ，会同时上报给所有站点。
 
-### 手动上报页面PV
+### 手动上报页面 PV
 
-api名称|功能说明
+API 名称|功能说明
 :-:|-
 pv|手动执行PV数据上报
 
-**api参数**
+**API 参数**
 
 参数|是否必填|参数类型|参数说明
 :-:|:-:|:-:|-
@@ -158,7 +158,7 @@ this.$pushBAIDU.pv(this.pageUrl);
 
 在 Vue 3.0 里使用
 
-（使用3.0的生命周期，需要遵循Vue3的规范，引入一个Vue自带的代理组件，并写在 `setup` 里执行）
+（使用 3.0 的生命周期，需要遵循 Vue3 的规范，引入一个 Vue 自带的代理组件，并写在 `setup` 里执行）
 
 ```js
 const { proxy } = getCurrentInstance();
@@ -168,18 +168,18 @@ proxy.$pushBAIDU.pv(pageUrl.value);
 
 ### 手动上报事件分析
 
-api名称|功能说明
+API 名称|功能说明
 :-:|-
 event|手动执行事件分析数据上报
 
-**api参数**
+**API 参数**
 
 参数|是否必填|参数类型|参数说明
 :-:|:-:|:-:|-
 category|是|string|产生该事件的位置名称，比如 `首页banner`
 action|是|string|产生该事件的行为描述，比如 `点击`
-label|否|string|产生该事件的标签名称，可以用来记录事件子id，比如 `bannerId_123`，默认为空
-value|否|number|该事件的分值，默认0
+label|否|string|产生该事件的标签名称，可以用来记录事件子 id，比如 `bannerId_123`，默认为空
+value|否|number|该事件的分值，默认 0
 
 **使用示范**
 
@@ -196,7 +196,7 @@ this.$pushBAIDU.event(
 
 在 Vue 3.0 里使用
 
-（使用3.0的生命周期，需要遵循Vue3的规范，引入一个Vue自带的代理组件，并写在 `setup` 里执行）
+（使用 3.0 的生命周期，需要遵循 Vue3 的规范，引入一个 Vue 自带的代理组件，并写在 `setup` 里执行）
 
 ```js
 const { proxy } = getCurrentInstance();

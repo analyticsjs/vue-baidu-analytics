@@ -1,6 +1,6 @@
 {
   "name": "vue-baidu-analytics",
-  "version": "2.0.3",
+  "version": "2.1.0",
   "description": "A data collection tool that supports reporting of single-page application data built by Vue 3.0 & 2.0 & VuePress, based on baidu statistics.",
   "main": "dist/vue-baidu-analytics.min.js",
   "types": "vue-baidu-analytics.d.ts",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chengpeiquan/vue-baidu-analytics.git"
+    "url": "git+https://github.com/analyticsjs/vue-baidu-analytics.git"
   },
   "keywords": [
     "baidu",
@@ -26,6 +26,7 @@
     "百度统计"
   ],
   "author": "chengpeiquan",
+  "homepage": "https://github.com/analyticsjs/vue-baidu-analytics",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -37,11 +38,13 @@
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@types/babel__core": "^7.1.9",
-    "rollup": "^2.26.4",
-    "rollup-plugin-banner": "^0.2.1",
-    "rollup-plugin-banner2": "^1.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
+    "eslint": "^7.23.0",
+    "rollup": "^2.44.0",
+    "rollup-plugin-banner2": "^1.2.2",
     "rollup-plugin-terser": "^7.0.0",
-    "rollup-plugin-typescript2": "^0.27.2",
+    "rollup-plugin-typescript2": "^0.30.0",
     "tslib": "^2.0.1",
     "typescript": "^4.0.2"
   }

@@ -1,6 +1,6 @@
 import BAIDU from '@m/baidu'
 
-/** 
+/**
  * 定义推送操作
  */
 class PushBAIDU {
@@ -8,11 +8,11 @@ class PushBAIDU {
   isDebug: boolean;
 
   constructor (siteIdList: string[], isDebug: boolean) {
-    this.siteIdList = siteIdList;
+    this.siteIdList = [...siteIdList];
     this.isDebug = isDebug;
   }
 
-  /** 
+  /**
    * 批量部署站点
    */
   init () {
@@ -22,7 +22,7 @@ class PushBAIDU {
     });
   }
 
-  /** 
+  /**
    * 批量提交pv上报
    */
   pv (pageUrl: string) {
@@ -32,7 +32,7 @@ class PushBAIDU {
     });
   }
 
-  /** 
+  /**
    * 批量提交事件上报
    */
   event (category: string, action: string, label: string, value: number) {
