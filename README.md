@@ -286,7 +286,7 @@ For example, there is a "exchange" function button on your page. If you want to 
 
 Method|Description
 :-:|-
-event|手动执行事件分析数据上报
+event|Manually perform event analysis data reporting.
 
 **Params**
 
