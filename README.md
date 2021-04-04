@@ -70,7 +70,7 @@ Tips: Please remember to turn off the debug mode before publish.
 
 You can install the plugin from NPM.
 
-```
+```bash
 npm install vue-baidu-analytics --save-dev
 ```
 

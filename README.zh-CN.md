@@ -68,7 +68,7 @@ isDebug|否|boolean|是否开启 debug 模式，默认 `false`，开启后会在
 
 方式一：通过 NPM 安装
 
-```
+```bash
 npm install vue-baidu-analytics --save-dev
 ```
 
