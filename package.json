@@ -5,7 +5,9 @@
   "main": "dist/vue-baidu-analytics.min.js",
   "types": "vue-baidu-analytics.d.ts",
   "scripts": {
-    "build": "rollup -c rollup.config.ts"
+    "build": "rollup -c rollup.config.ts",
+    "lint": "eslint src --ext .js,.ts",
+    "prettier": "prettier --write src"
   },
   "repository": {
     "type": "git",
