@@ -86,6 +86,7 @@ export default function install(
 
   /**
    * 路由切换时执行PV上报
+   * @description 自 v2.2.0 版本开始允许不强制引入路由
    */
   if (router) {
     router.afterEach(() => {
