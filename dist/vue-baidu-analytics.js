@@ -246,14 +246,7 @@
     /**
      * 一些环境和参数的检查
      */
-    if (typeof document === 'undefined' || typeof window === 'undefined') {
-      return false
-    }
-    if (!router) {
-      throw new Error(
-        '[vue-baidu-analytics] Must pass a Vue-Router instance to vue-baidu-analytics.'
-      )
-    }
+    if (typeof document === 'undefined' || typeof window === 'undefined') return
     if (!siteIdList) {
       throw new Error(
         '[vue-baidu-analytics] Missing tracking domain ID, add at least one of baidu analytics siteId.'
@@ -286,12 +279,14 @@
     /**
      * 路由切换时执行PV上报
      */
-    router.afterEach(function () {
-      // 获取要上报的链接（当前版本不需要拼接了）
-      var PAGE_URL = window.location.href
-      // 上报数据
-      pushBAIDU.pv(PAGE_URL)
-    })
+    if (router) {
+      router.afterEach(function () {
+        // 获取要上报的链接（当前版本不需要拼接了）
+        var PAGE_URL = window.location.href
+        // 上报数据
+        pushBAIDU.pv(PAGE_URL)
+      })
+    }
   }
 
   exports.default = install

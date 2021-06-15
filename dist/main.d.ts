@@ -22,4 +22,4 @@ export declare function usePush(): {
 export default function install(
   Vue: Vue,
   { router, siteIdList, isDebug }: Partial<Options>
-): false | undefined
+): void

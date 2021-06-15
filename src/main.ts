@@ -49,15 +49,7 @@ export default function install(
   /**
    * 一些环境和参数的检查
    */
-  if (typeof document === 'undefined' || typeof window === 'undefined') {
-    return false
-  }
-
-  if (!router) {
-    throw new Error(
-      '[vue-baidu-analytics] Must pass a Vue-Router instance to vue-baidu-analytics.'
-    )
-  }
+  if (typeof document === 'undefined' || typeof window === 'undefined') return
 
   if (!siteIdList) {
     throw new Error(
@@ -95,11 +87,13 @@ export default function install(
   /**
    * 路由切换时执行PV上报
    */
-  router.afterEach(() => {
-    // 获取要上报的链接（当前版本不需要拼接了）
-    const PAGE_URL: string = window.location.href
+  if (router) {
+    router.afterEach(() => {
+      // 获取要上报的链接（当前版本不需要拼接了）
+      const PAGE_URL: string = window.location.href
 
-    // 上报数据
-    pushBAIDU.pv(PAGE_URL)
-  })
+      // 上报数据
+      pushBAIDU.pv(PAGE_URL)
+    })
+  }
 }
