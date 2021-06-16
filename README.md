@@ -324,6 +324,10 @@ this.$pushBAIDU.event(
 );
 ```
 
+## 更新记录
+
+戳：[releases](https://github.com/analyticsjs/vue-baidu-analytics/releases)
+
 ## License
 
 [MIT License](https://github.com/analyticsjs/vue-baidu-analytics/blob/master/LICENSE) © 2019 [chengpeiquan](https://github.com/chengpeiquan)
