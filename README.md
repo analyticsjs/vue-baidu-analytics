@@ -326,7 +326,7 @@ this.$pushBAIDU.event(
 
 ## 更新记录
 
-戳：[releases](https://github.com/analyticsjs/vue-baidu-analytics/releases)
+点击查看：[vue-baidu-analytics/releases](https://github.com/analyticsjs/vue-baidu-analytics/releases)
 
 ## License
 
