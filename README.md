@@ -34,7 +34,7 @@
 
 ## 项目
 
-理论上只要引入了 Vue （必须） 和 Vue Router （可选） 的项目均可以正常使用，包括但不限于以下类型：
+理论上只要引入了 Vue （必须） 和 Vue Router （自 v2.2.0 起是可选） 的项目均可以正常使用，包括但不限于以下类型：
 
 * Vue-CLI 脚手架项目
 
@@ -326,7 +326,7 @@ this.$pushBAIDU.event(
 
 ## 更新记录
 
-点击查看：[vue-baidu-analytics/releases](https://github.com/analyticsjs/vue-baidu-analytics/releases)
+点击查看：[releases](https://github.com/analyticsjs/vue-baidu-analytics/releases)
 
 ## License
 
