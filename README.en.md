@@ -1,3 +1,7 @@
+This package is no longer maintained, please use [@web-analytics/vue](https://analytics.js.org/vue/) , which has an easier method of use while maintaining the original functions.
+
+---
+
 <p align='center'>
   <img src="https://cdn.jsdelivr.net/gh/chengpeiquan/assets-storage/img/2021/04/20210404235335.png" alt="vue-baidu-analytics" />
 </p>
